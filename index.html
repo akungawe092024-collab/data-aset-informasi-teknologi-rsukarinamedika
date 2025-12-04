@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="id">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daftar Aset IT RSU Karina Medika</title>
+  <link rel="stylesheet" href="Style.css">
+  
+  <script>
+    // Cek apakah pengguna sudah login
+    if (sessionStorage.getItem('isLoggedIn') !== 'true') {
+        // Jika belum login, arahkan pengguna ke halaman login
+        window.location.replace('login.html'); 
+    }
+  </script>
+  
+ </head>
+ <body>
+ 
+  <div class="container"> 
+      
+      <header class="header">
+          <h1 class="header-title">Daftar Aset Informasi & Teknologi</h1> 
+          <p class="header-subtitle">Monitoring Aset IT Per Ruangan</p>
+      </header>
+
+      <div class="main-content">
+          <div class="content-card">
+              <div id="breadcrumbContainer" class="breadcrumb-container"></div>
+              
+              <h2 class="page-title" id="pageTitle">Pilih Lantai</h2>
+              
+              <div id="contentArea">
+                  </div>
+          </div>
+      </div>
+      
+      <footer class="footer">
+        <p id="copyrightText">Copyright © IT Support RSU Karina Medika</p>
+        <a href="#" onclick="logout()" class="logout-link">Logout</a>
+      </footer>
+  </div>
+
+  <script src="script.js"></script>
+
+  <script>
+      function logout() {
+          // Hapus status login
+          sessionStorage.removeItem('isLoggedIn');
+          sessionStorage.removeItem('userNIP');
+          // Arahkan kembali ke halaman login
+          window.location.replace('login.html');
+      }
+  </script>
+
+ </body>
+</html>

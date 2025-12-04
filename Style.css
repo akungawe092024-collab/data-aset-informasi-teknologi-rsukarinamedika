@@ -1,0 +1,355 @@
+/* General Body and HTML Styling (Optimalisasi Tata Letak Global + Warna Lama) */
+html {
+    overflow-x: hidden; 
+}
+
+body {
+    /* Background dan Centering */
+    background: linear-gradient(135deg, #a8e6cf 0%, #dcedc1 100%);
+    background-image: url('rs.jpg');
+    background-size: cover; 
+    background-position: center center; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed;
+    position: relative;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center; /* Memastikan konten di tengah horizontal */
+    align-items: center; /* Memastikan konten di tengah vertikal */
+    flex-direction: column;  
+    padding: 30px 0;
+    margin: 0;
+}
+
+/* Overlay untuk Keterbacaan */
+body::before {
+    content: "";
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); 
+    z-index: -1;
+}
+
+/* Main Container Styling (Optimasi Ukuran dan Simetri) */
+.container {
+    background-color: rgba(255, 255, 255, 0.98);
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+    
+    max-width: 850px; /* Lebar optimal */
+    width: 95%; 
+    margin: 0 auto; /* Penting untuk centering jika parent bukan flex */
+    
+    z-index: 1;
+    border: 1px solid rgba(220, 220, 220, 0.8);
+    min-height: auto; 
+    box-sizing: border-box;
+    text-align: center; 
+}
+.header {
+    text-align: center;
+}
+
+/* Header Styling */
+.header h1 {
+    color: #2E7D32;
+    margin-bottom: 5px; 
+    font-size: 2.2em;
+    font-weight: 700;
+}
+.header p {
+    color: #555;
+    font-size: 1.05em;
+    margin-top: 0;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Content Card Styling */
+.content-card {
+    background-color: #fff;
+    padding: 30px; 
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 25px;
+    animation: fadeIn 0.5s ease-out;
+    text-align: left; /* Konten di dalam card kembali ke rata kiri */
+}
+
+/* Page Title, Breadcrumb, Footer */
+#pageTitle {
+    color: #333;
+    font-size: 1.8em;
+    margin-top: 0;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #E0E0E0;
+    padding-bottom: 15px;
+    font-weight: 600;
+}
+.breadcrumb-container {
+    margin-bottom: 15px;
+    font-size: 0.95em;
+    color: #757575;
+}
+.breadcrumb-item {
+    color: #4CAF50; 
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-weight: 500;
+}
+.breadcrumb-separator {
+    margin: 0 8px;
+    color: #BDBDBD;
+}
+.logout-link {
+    display: block;
+    margin-top: 10px;
+    color: #f44336; 
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+/* --- OPTIMASI TATA LETAK TOMBOL MENU --- */
+
+.flex-menu-container {
+    display: grid;
+    max-width: 800px; 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 15px;
+    margin: 20px auto 0 auto; /* Auto margin untuk centering grid di dalam content-card */
+}
+
+.button-wrapper {
+    display: flex;
+    gap: 8px; 
+}
+
+.menu-button {
+    background: linear-gradient(135deg, #66BB6A 0%, #4CAF50 100%);
+    color: white;
+    padding: 15px 10px; 
+    border: none;
+    border-radius: 8px; 
+    font-size: 1.05em; 
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    
+    flex-grow: 1; 
+    text-align: center;
+}
+
+.menu-button:hover {
+    transform: translateY(-2px); 
+    box-shadow: 0 6px 15px rgba(102, 187, 106, 0.4);
+    background: linear-gradient(135deg, #4CAF50 0%, #66BB6A 100%);
+}
+
+.menu-button:active {
+    transform: translateY(0);
+}
+
+/* Styling tambahan untuk tombol yang berfungsi sebagai download (opsional) */
+.menu-button-download {
+    background: linear-gradient(135deg, #FFB300 0%, #FF9800 100%);
+}
+.menu-button-download:hover {
+    box-shadow: 0 6px 15px rgba(255, 179, 0, 0.4);
+    background: linear-gradient(135deg, #FF9800 0%, #FFB300 100%);
+}
+
+
+/* BACK BUTTON STYLES (Disesuaikan untuk tautan Download juga) */
+.back-button {
+    background: linear-gradient(135deg, #A5D6A7 0%, #C5E1A5 100%);
+    color: #2E7D32; 
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(165, 214, 167, 0.3);
+    display: inline-block; 
+    margin-bottom: 20px;
+    margin-right: 10px; 
+    text-decoration: none; 
+}
+.back-button:hover {
+    background: #C5E1A5;
+}
+
+/* Styling khusus untuk tombol download file aset di halaman detail */
+.download-asset-btn {
+    background-color: #FFB300 !important;
+    color: white !important;
+    box-shadow: 0 3px 10px rgba(255, 179, 0, 0.3) !important;
+}
+
+/* --- Styling Tambahan untuk Tabel Aset --- */
+.table-container {
+    overflow-x: auto; 
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+.asset-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 550px; 
+}
+.asset-table th, .asset-table td {
+    padding: 14px 18px;
+    text-align: left;
+    border-bottom: 1px solid #E0E0E0;
+    font-size: 14px;
+}
+.asset-table th {
+    background-color: #2E7D32; 
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: sticky; 
+    top: 0; 
+}
+.asset-table tr:nth-child(even) {
+    background-color: #F9FBE7;
+}
+.asset-table tr:hover {
+    background-color: #E8F5E9; 
+    cursor: default;
+}
+
+
+/* --- LOGIN CARD STYLES --- */
+.login-card {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    text-align: center; 
+    max-width: 400px;
+    width: 90%;
+    z-index: 1;
+}
+.login-card h2 {
+    color: #2E7D32;
+    margin-bottom: 30px;
+}
+.login-card input[type="text"] {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 1em;
+    text-align: center; 
+}
+.login-card button {
+    background-color: #66BB6A;
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.05em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.login-card button:hover {
+    background-color: #4CAF50;
+}
+#loginMessage {
+    margin-top: 15px;
+    font-weight: 600;
+    font-size: 0.95em;
+}
+
+
+/* ======================================= */
+/* MEDIA QUERIES UNTUK TAMPILAN SMARTPHONE */
+/* ======================================= */
+@media (max-width: 600px) {
+    body {
+        background-attachment: scroll; 
+    }
+    
+    .container {
+        padding: 0; 
+        width: 100%;
+        max-width: none;
+        border-radius: 0; 
+        box-shadow: none; 
+        margin: 0;
+    }
+
+    .login-card {
+        width: 95%; 
+        padding: 30px 20px; 
+        margin: 10px auto; 
+    }
+    
+    .header {
+        padding: 20px 15px 10px 15px; 
+    }
+
+    .content-card {
+        padding: 15px;
+        border-radius: 0;
+        box-shadow: none;
+        margin-top: 0; 
+    }
+    
+    .table-container {
+        margin-left: -15px; 
+        margin-right: -15px;
+        width: calc(100% + 30px); 
+        box-shadow: none; 
+        border-radius: 0; 
+    }
+    
+    .asset-table th, .asset-table td {
+        padding: 10px 8px; 
+        font-size: 12px;
+    }
+
+    .flex-menu-container {
+        grid-template-columns: 1fr; 
+        max-width: none; 
+    }
+
+    .back-button {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    /* Memperbaiki tata letak tombol download di mobile */
+    .back-button.download-asset-btn {
+        margin-right: 0;
+        margin-top: 10px; 
+    }
+}
+
+/* --- Keyframes untuk Animasi Fade-In --- */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

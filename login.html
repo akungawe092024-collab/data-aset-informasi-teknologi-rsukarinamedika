@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Daftar Aset IT</title>
+    <link rel="stylesheet" href="Style.css"> 
+</head>
+<body>
+
+    <div class="login-card">
+        <Marquee><h2>Selamat Datang Di Monitoring Daftar Aset Informasi & Teknologi RSU Karina Medika</h2></Marquee>
+        
+        <form id="loginForm">
+            <input type="text" id="nipInput" placeholder="Masukkan NIP (6 Digit)" required maxlength="6" pattern="\d{6}">
+            <button type="submit">Login</button>
+        </form>
+        <p id="loginMessage"></p>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Daftar NIP yang diizinkan (INI ADALAH DATA KRITIS)
+            const allowedNIPs = ['000546', '000547', '000548']; 
+            const nipInput = document.getElementById('nipInput').value.trim();
+            const messageElement = document.getElementById('loginMessage');
+
+            // Hapus pesan sebelumnya
+            messageElement.textContent = '';
+
+            // 1. Validasi Input
+            if (nipInput.length !== 6 || isNaN(nipInput)) {
+                messageElement.textContent = 'NIP harus 6 digit angka.';
+                messageElement.style.color = '#D32F2F'; // Merah
+                return;
+            }
+
+            // 2. Cek Otentikasi
+            if (allowedNIPs.includes(nipInput)) {
+                // Login berhasil
+                messageElement.textContent = 'Login berhasil! Mengalihkan...';
+                messageElement.style.color = '#4CAF50'; // Hijau
+                
+                // 3. Simpan Status di sessionStorage (KEY: isLoggedIn)
+                sessionStorage.setItem('isLoggedIn', 'true');
+                sessionStorage.setItem('userNIP', nipInput); // Menyimpan NIP user
+
+                // 4. Arahkan ke halaman utama
+                window.location.href = 'index.html'; 
+
+            } else {
+                // Login gagal
+                messageElement.textContent = 'NIP tidak terdaftar atau tidak memiliki akses.';
+                messageElement.style.color = '#D32F2F'; // Merah
+            }
+        });
+    </script>
+
+</body>
+</html>
