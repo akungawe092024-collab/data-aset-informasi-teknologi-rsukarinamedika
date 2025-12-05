@@ -159,11 +159,11 @@ body::before {
 
 /* Styling tambahan untuk tombol yang berfungsi sebagai download (opsional) */
 .menu-button-download {
-    background: linear-gradient(135deg, #FFB300 0%, #FF9800 100%);
+    background: linear-gradient(135deg, #2E7D29 0%, #0bc55fdc 100%);
 }
 .menu-button-download:hover {
     box-shadow: 0 6px 15px rgba(255, 179, 0, 0.4);
-    background: linear-gradient(135deg, #FF9800 0%, #FFB300 100%);
+    background: linear-gradient(135deg, #0fc579 0%, #0fc579 100%);
 }
 
 
@@ -190,7 +190,7 @@ body::before {
 
 /* Styling khusus untuk tombol download file aset di halaman detail */
 .download-asset-btn {
-    background-color: #FFB300 !important;
+    background-color: #2e7d32 !important;
     color: white !important;
     box-shadow: 0 3px 10px rgba(255, 179, 0, 0.3) !important;
 }
