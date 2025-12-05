@@ -83,15 +83,15 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         "Lantai 1": {
             title: "Lantai 1 - Pilih Ruangan",
-            items: ["Kasir", "Upp", "Fisioteraphy", "Admisi", "Apotek Rawat Jalan", "Logistik Farmasi", "Radiologi", "NS Poliklinik", "Poli Anak", "Poli Gigi", "Poli Dalam", "Poli Obgyn", "Poli Umum", "Laboratorium", "Gizi", "Rekam Medis", "IGD", "OK", "Logistik Umum", "Pos Security"]
+            items: ["Kasir", "Upp", "Fisioteraphy", "Admisi", "Apotek Rawat Jalan", "Logistik Farmasi", "Radiologi", "NS Poliklinik", "Poli Anak", "Poli Gigi", "Poli Dalam", "Poli Obgyn", "Poli Umum", "Laboratorium", "VK","Gizi", "Rekam Medis", "IGD", "OK", "Logistik Umum", "Pos Security"]
         },
         "Lantai 2": {
             title: "Lantai 2 - Pilih Ruangan",
-            items: ["Kantor 1", "Kantor 2", "Keuangan & Direksi", "Nursestation", "Intensive", "Perinatologi", "Aula" , "Ruang Server"]
+            items: ["Kantor 1", "Kantor 2", "Informics" , "Keuangan & Direksi", "Nursestation Lt2", "Intensive", "Perinatologi", "Apotek Rawat Inap", "Aula" , "Ruang Server"]
         },
         "Lantai 3": {
             title: "Lantai 3 - Pilih Ruangan",
-            items: ["Nursestation Anak", "NS Anak", "NS OK", "NS VK", "NS ICU", "Ruang Tindakan", "Ruang Dokter", "Ruang Perawat", "Ruang Lain"]
+            items: ["Nursestation Lt3", "NS IPD", "Ruang Tindakan"]
         },
         
         // --- DEFINISI ASET DENGAN TAUTAN DOWNLOAD LENGKAP ---
@@ -153,11 +153,11 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         "Poli Umum": { 
             title: "Aset Ruangan Poli Umum", type: "asset",
-            downloadUrl: "https://yourdomain.com/download/PoliUmum.xlsx" 
+            downloadUrl: "https://docs.google.com/spreadsheets/d/1yh_LoCP54vgQ_aharHqB-xh1X17osUjd/edit?usp=sharing&ouid=107932485586061555789&rtpof=true&sd=true" 
         },
         "Laboratorium": { 
             title: "Aset Ruangan Laboratorium", type: "asset",
-            downloadUrl: "https://yourdomain.com/download/Laboratorium.xlsx"
+            downloadUrl: "https://docs.google.com/spreadsheets/d/1XLjlW5f_ezo99v1tgQ9lPYpihZWjBiiy/edit?usp=sharing&ouid=107932485586061555789&rtpof=true&sd=true"
         },
         "Gizi": { 
             title: "Aset Ruangan Gizi", type: "asset",
@@ -173,11 +173,11 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         "OK": { 
             title: "Aset Ruangan OK", type: "asset",
-            downloadUrl: "https://yourdomain.com/download/OK.xlsx"
+            downloadUrl: "https://docs.google.com/spreadsheets/d/11a4luU1siPHN2tosM135GaNHIsIfvR7H/edit?usp=sharing&ouid=107932485586061555789&rtpof=true&sd=true"
         },
         "Logistik Umum": { 
             title: "Aset Ruangan Logistik Umum", type: "asset",
-            downloadUrl: "https://yourdomain.com/download/LogistikUmum.xlsx"
+            downloadUrl: "https://docs.google.com/spreadsheets/d/198IR9cjXjWFJJ6BFWdjJkqTtiq_BqSSX/edit?usp=sharing&ouid=107932485586061555789&rtpof=true&sd=true"
         },
         "Pos Security": { 
             title: "Aset Ruangan Pos Security", type: "asset",
@@ -195,29 +195,29 @@ document.addEventListener('DOMContentLoaded', () => {
             title: "Aset Ruangan Keuangan & Direksi", type: "asset",
             downloadUrl: "https://yourdomain.com/download/KeuanganDireksi.xlsx"
         },
-        "Nursestation": { 
-            title: "Aset Ruangan Nursestation Lantai 2", type: "asset",
-            downloadUrl: "https://yourdomain.com/download/NursestationL2.xlsx"
+        "Nursestation Lt3": { 
+            title: "Aset Ruangan Nursestation Lt3", type: "asset",
+            downloadUrl: "https://docs.google.com/spreadsheets/d/15d7rsUIkxF58QMpq84HSWyvHf1ay9uoi/edit?usp=sharing&ouid=107932485586061555789&rtpof=true&sd=true"
         },
         "Intensive": { 
             title: "Aset Ruangan Intensive", type: "asset",
-            downloadUrl: "https://yourdomain.com/download/Intensive.xlsx"
+            downloadUrl: "https://docs.google.com/spreadsheets/d/139KTc6lNbwBDYubEOBoyAE-hheDnR2h6/edit?usp=sharing&ouid=107932485586061555789&rtpof=true&sd=true"
         },
         "Perinatologi": { 
             title: "Aset Ruangan Perinatologi", type: "asset",
-            downloadUrl: "https://yourdomain.com/download/Perinatologi.xlsx"
+            downloadUrl: "https://docs.google.com/spreadsheets/d/1BGk-eBbcK3WeWxXEZ1i5FlRj-Zw8S5ND/edit?usp=sharing&ouid=107932485586061555789&rtpof=true&sd=true"
         },
         "Aula": { 
             title: "Aset Ruangan Aula", type: "asset",
-            downloadUrl: "https://yourdomain.com/download/Aula.xlsx"
+            downloadUrl: "https://docs.google.com/spreadsheets/d/1mMi0g0DCNFjuJqLIOF8cbjlCM89LEsJH/edit?usp=sharing&ouid=107932485586061555789&rtpof=true&sd=true"
         },
         "Ruang Server": { 
             title: "Aset Ruangan Server Lantai 2", type: "asset",
             downloadUrl: "https://yourdomain.com/download/RuangServerL2.xlsx"
         },
-        "Nursestation Anak": { 
-            title: "Aset Ruangan Nursestation Anak", type: "asset",
-            downloadUrl: "https://yourdomain.com/download/NursestationAnak.xlsx"
+        "Nursestation Lt2": { 
+            title: "Aset Ruangan Nursestation Lt2", type: "asset",
+            downloadUrl: "https://docs.google.com/spreadsheets/d/1SCSM3kGtGSTqS6gPJytShSsgy3X3EfHP/edit?usp=sharing&ouid=107932485586061555789&rtpof=true&sd=true"
         },
         "NS Anak": { 
             title: "Aset Ruangan NS Anak", type: "asset",
@@ -227,17 +227,17 @@ document.addEventListener('DOMContentLoaded', () => {
             title: "Aset Ruangan NS OK", type: "asset",
             downloadUrl: "https://yourdomain.com/download/NSOK.xlsx"
         },
-        "NS VK": { 
-            title: "Aset Ruangan NS VK", type: "asset",
-            downloadUrl: "https://yourdomain.com/download/NSVK.xlsx"
+        "VK": { 
+            title: "Aset Ruangan VK", type: "asset",
+            downloadUrl: "https://docs.google.com/spreadsheets/d/1DV88tGyh6jtwI_4ZrRPphr5_aaUI6Q9u/edit?usp=sharing&ouid=107932485586061555789&rtpof=true&sd=true"
         },
-        "NS ICU": { 
+        "Apotek Rawat Inap": { 
             title: "Aset Ruangan NS ICU", type: "asset",
             downloadUrl: "https://yourdomain.com/download/NSICU.xlsx"
         },
         "Ruang Tindakan": { 
             title: "Aset Ruangan Ruang Tindakan", type: "asset",
-            downloadUrl: "https://yourdomain.com/download/RuangTindakan.xlsx"
+            downloadUrl: "https://docs.google.com/spreadsheets/d/1Jc5QcSzDLslhjreTOcehXrJkkZXbR53k/edit?usp=sharing&ouid=107932485586061555789&rtpof=true&sd=true"
         },
         "Ruang Dokter": { 
             title: "Aset Ruangan Ruang Dokter", type: "asset",
