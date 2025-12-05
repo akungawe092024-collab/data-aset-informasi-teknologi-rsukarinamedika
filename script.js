@@ -232,8 +232,8 @@ document.addEventListener('DOMContentLoaded', () => {
             downloadUrl: "https://docs.google.com/spreadsheets/d/1DV88tGyh6jtwI_4ZrRPphr5_aaUI6Q9u/edit?usp=sharing&ouid=107932485586061555789&rtpof=true&sd=true"
         },
         "Apotek Rawat Inap": { 
-            title: "Aset Ruangan NS ICU", type: "asset",
-            downloadUrl: "https://yourdomain.com/download/NSICU.xlsx"
+            title: "Aset Ruangan Apotek Rawat Inap", type: "asset",
+            downloadUrl: "https://docs.google.com/spreadsheets/d/18i0RIHa2gyOs2qnVUKnit8ZOtg47Uf35/edit?usp=sharing&ouid=107932485586061555789&rtpof=true&sd=true"
         },
         "Ruang Tindakan": { 
             title: "Aset Ruangan Ruang Tindakan", type: "asset",
