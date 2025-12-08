@@ -189,7 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         "Kantor 2": { 
             title: "Aset Ruangan Kantor 2", type: "asset",
-            downloadUrl: "https://yourdomain.com/download/Kantor2.xlsx"
+            downloadUrl: "https://docs.google.com/spreadsheets/d/1rNXqMhL9ZaSQrGCf52gHEdN9Nl9G3hfS/edit?usp=sharing&ouid=107932485586061555789&rtpof=true&sd=true"
         },
         "Keuangan & Direksi": { 
             title: "Aset Ruangan Keuangan & Direksi", type: "asset",
