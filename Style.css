@@ -132,7 +132,7 @@ body::before {
 }
 
 .menu-button {
-    background: linear-gradient(135deg, #66BB6A 0%, #4CAF50 100%);
+    background: linear-gradient(135deg, #2E7D32 0%, #2E7D32 100%);
     color: white;
     padding: 15px 10px; 
     border: none;
@@ -150,7 +150,7 @@ body::before {
 .menu-button:hover {
     transform: translateY(-2px); 
     box-shadow: 0 6px 15px rgba(102, 187, 106, 0.4);
-    background: linear-gradient(135deg, #4CAF50 0%, #66BB6A 100%);
+    background: linear-gradient(135deg, #2E7D32 0%, #2E7D32 100%);
 }
 
 .menu-button:active {
@@ -159,11 +159,11 @@ body::before {
 
 /* Styling tambahan untuk tombol yang berfungsi sebagai download (opsional) */
 .menu-button-download {
-    background: linear-gradient(135deg, #2E7D29 0%, #0bc55fdc 100%);
+    background: linear-gradient(135deg, #2E7D29 0%, #2E7D29 100%);
 }
 .menu-button-download:hover {
     box-shadow: 0 6px 15px rgba(255, 179, 0, 0.4);
-    background: linear-gradient(135deg, #0fc579 0%, #0fc579 100%);
+    background: linear-gradient(135deg, #2E7D29 0%, #2E7D29 100%);
 }
 
 
