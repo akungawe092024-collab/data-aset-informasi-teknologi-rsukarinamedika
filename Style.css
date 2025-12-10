@@ -38,243 +38,265 @@ body::before {
 /* Main Container Styling (Optimasi Ukuran dan Simetri) */
 .container {
     background-color: rgba(255, 255, 255, 0.98);
-    padding: 30px 40px;
-    border-radius: 15px;
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
-    
-    max-width: 850px; /* Lebar optimal */
-    width: 95%; 
-    margin: 0 auto; /* Penting untuk centering jika parent bukan flex */
-    
-    z-index: 1;
-    border: 1px solid rgba(220, 220, 220, 0.8);
-    min-height: auto; 
-    box-sizing: border-box;
-    text-align: center; 
+    padding: 0;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    min-height: 80vh; 
+    margin: 30px auto; 
 }
+
+/* Header Styling (Warna Hijau RSU) */
 .header {
+    background-color: #4caf50; /* Hijau Utama */
+    color: white;
+    padding: 30px 30px 20px 30px; 
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
     text-align: center;
 }
 
-/* Header Styling */
-.header h1 {
-    color: #2E7D32;
-    margin-bottom: 5px; 
-    font-size: 2.2em;
-    font-weight: 700;
+.header-title {
+    margin: 0;
+    font-size: 1.8em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
-.header p {
-    color: #555;
-    font-size: 1.05em;
+
+.header-subtitle {
+    margin: 5px 0 0;
+    font-size: 1em;
+    opacity: 0.8;
+}
+
+/* Main Content Area */
+.main-content {
+    flex-grow: 1; /* Konten mengisi ruang yang tersedia */
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Card Styling untuk Konten */
+.content-card {
+    background-color: #ffffff;
+    padding: 25px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    flex-grow: 1;
+}
+
+.page-title {
+    color: #388e3c; /* Hijau Sedang */
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 10px;
     margin-top: 0;
-    line-height: 1.6;
     margin-bottom: 20px;
 }
 
-/* Content Card Styling */
-.content-card {
-    background-color: #fff;
-    padding: 30px; 
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    margin-top: 25px;
-    animation: fadeIn 0.5s ease-out;
-    text-align: left; /* Konten di dalam card kembali ke rata kiri */
-}
-
-/* Page Title, Breadcrumb, Footer */
-#pageTitle {
-    color: #333;
-    font-size: 1.8em;
-    margin-top: 0;
-    margin-bottom: 25px;
-    border-bottom: 2px solid #E0E0E0;
-    padding-bottom: 15px;
-    font-weight: 600;
-}
+/* Breadcrumb Styling */
 .breadcrumb-container {
     margin-bottom: 15px;
-    font-size: 0.95em;
+    font-size: 0.9em;
     color: #757575;
 }
+
 .breadcrumb-item {
-    color: #4CAF50; 
+    color: #4caf50;
     text-decoration: none;
-    transition: color 0.3s ease;
-    font-weight: 500;
+    transition: color 0.2s;
 }
+
+.breadcrumb-item:hover {
+    color: #388e3c;
+    text-decoration: underline;
+}
+
 .breadcrumb-separator {
-    margin: 0 8px;
-    color: #BDBDBD;
-}
-.logout-link {
-    display: block;
-    margin-top: 10px;
-    color: #f44336; 
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
+    margin: 0 5px;
+    color: #bdbdbd;
 }
 
-/* --- OPTIMASI TATA LETAK TOMBOL MENU --- */
-
+/* Menu Button Styling (CSS Grid untuk Responsif) */
 .flex-menu-container {
     display: grid;
-    max-width: 800px; 
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
-    gap: 15px;
-    margin: 20px auto 0 auto; /* Auto margin untuk centering grid di dalam content-card */
-}
-
-.button-wrapper {
-    display: flex;
-    gap: 8px; 
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 20px;
+    margin-top: 20px;
 }
 
 .menu-button {
-    background: linear-gradient(135deg, #2E7D32 0%, #2E7D32 100%);
-    color: white;
-    padding: 15px 10px; 
+    /* WARNA UTAMA UNTUK SEMUA TOMBOL */
+    width: 100%;
+    padding: 25px 15px;
     border: none;
-    border-radius: 8px; 
-    font-size: 1.05em; 
-    font-weight: 600;
+    border-radius: 8px;
+    background-color: #09d12aee; /* Hijau Muda Seragam */
+    color: #ffffff; /* Teks hijau tua Seragam */
+    font-size: 1.1em;
+    font-weight: bold;
     cursor: pointer;
-    transition: all 0.3s ease; 
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    
-    flex-grow: 1; 
+    transition: background-color 0.3s, transform 0.1s, box-shadow 0.3s;
     text-align: center;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 }
 
 .menu-button:hover {
-    transform: translateY(-2px); 
-    box-shadow: 0 6px 15px rgba(102, 187, 106, 0.4);
-    background: linear-gradient(135deg, #2E7D32 0%, #2E7D32 100%);
+    background-color: #66bb6a; /* Hijau agak tua saat hover Seragam */
+    transform: translateY(-2px);
+    box-shadow: 0 0px 12px rgba(0, 0, 0, 0.2);
 }
 
 .menu-button:active {
     transform: translateY(0);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Styling tambahan untuk tombol yang berfungsi sebagai download (opsional) */
-.menu-button-download {
-    background: linear-gradient(135deg, #2E7D29 0%, #2E7D29 100%);
-}
-.menu-button-download:hover {
-    box-shadow: 0 6px 15px rgba(255, 179, 0, 0.4);
-    background: linear-gradient(135deg, #2E7D29 0%, #2E7D29 100%);
-}
+/* Styling Khusus untuk Tombol Download DIBUANG agar sama dengan .menu-button */
+/* class .menu-button-download tetap ada di HTML tapi stylingnya ditiadakan */
 
-
-/* BACK BUTTON STYLES (Disesuaikan untuk tautan Download juga) */
+/* Back Button Styling */
 .back-button {
-    background: linear-gradient(135deg, #A5D6A7 0%, #C5E1A5 100%);
-    color: #2E7D32; 
-    border: none;
-    padding: 12px 20px;
-    border-radius: 8px;
-    font-size: 1em;
-    font-weight: 600;
+    background: none;
+    border: 1px solid #9e9e9e;
+    color: #616161;
+    padding: 8px 15px;
+    border-radius: 5px;
     cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 3px 10px rgba(165, 214, 167, 0.3);
-    display: inline-block; 
-    margin-bottom: 20px;
-    margin-right: 10px; 
-    text-decoration: none; 
+    margin-bottom: 15px;
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 0.9em;
+    display: inline-block;
 }
+
 .back-button:hover {
-    background: #C5E1A5;
+    background-color: #f5f5f5;
+    color: #424242;
 }
 
-/* Styling khusus untuk tombol download file aset di halaman detail */
-.download-asset-btn {
-    background-color: #2e7d32 !important;
-    color: white !important;
-    box-shadow: 0 3px 10px rgba(255, 179, 0, 0.3) !important;
-}
-
-/* --- Styling Tambahan untuk Tabel Aset --- */
-.table-container {
-    overflow-x: auto; 
-    width: 100%;
-    margin-top: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-}
-.asset-table {
-    width: 100%;
-    border-collapse: collapse;
-    min-width: 550px; 
-}
-.asset-table th, .asset-table td {
-    padding: 14px 18px;
-    text-align: left;
-    border-bottom: 1px solid #E0E0E0;
-    font-size: 14px;
-}
-.asset-table th {
-    background-color: #2E7D32; 
+/* Footer Styling (Menampilkan NIP) */
+.footer {
+    display: flex;
+    justify-content: space-between; /* Untuk meratakan elemen */
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #2e7d32; /* Hijau tua */
     color: white;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    position: sticky; 
-    top: 0; 
-}
-.asset-table tr:nth-child(even) {
-    background-color: #F9FBE7;
-}
-.asset-table tr:hover {
-    background-color: #E8F5E9; 
-    cursor: default;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    font-size: 14px;
+    margin-top: auto; /* Memastikan footer selalu di bawah */
 }
 
+/* Styling untuk teks NIP */
+.user-info-text {
+    margin: 0;
+    font-weight: bold;
+    color: #c8e6c9; /* Warna hijau muda untuk kontras */
+}
 
-/* --- LOGIN CARD STYLES --- */
+.logout-link {
+    color: #ffccbc;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.logout-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Placeholder/Error Text */
+.placeholder-error {
+    text-align: center;
+    color: #D32F2F;
+    font-weight: bold;
+    padding: 20px;
+    border: 1px dashed #D32F2F;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+/* ======================================= */
+/* LOGIN CARD STYLING */
+/* ======================================= */
+
 .login-card {
-    background-color: #fff;
+    background-color: white;
     padding: 40px;
-    border-radius: 12px;
+    border-radius: 10px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    text-align: center; 
+    width: 100%;
     max-width: 400px;
-    width: 90%;
-    z-index: 1;
+    text-align: center;
+    animation: fadeIn 1s ease-out;
+    margin: auto; /* Memastikan di tengah halaman */
 }
+
 .login-card h2 {
-    color: #2E7D32;
-    margin-bottom: 30px;
+    color: #388e3c;
+    margin-bottom: 25px;
+    font-size: 1.5em;
 }
+
 .login-card input[type="text"] {
     width: 100%;
-    padding: 15px;
+    padding: 12px;
     margin-bottom: 20px;
     border: 1px solid #ccc;
-    border-radius: 8px;
-    box-sizing: border-box;
+    border-radius: 5px;
+    box-sizing: border-box; /* Penting untuk padding */
     font-size: 1em;
-    text-align: center; 
 }
+
 .login-card button {
-    background-color: #66BB6A;
+    width: 100%;
+    background-color: #4caf50;
     color: white;
-    padding: 15px 25px;
+    padding: 14px 20px;
+    margin: 8px 0;
     border: none;
-    border-radius: 8px;
-    font-size: 1.05em;
-    font-weight: 600;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.1s;
 }
+
 .login-card button:hover {
-    background-color: #4CAF50;
+    background-color: #388e3c;
+    transform: translateY(-1px);
 }
+
+.login-card button:active {
+    transform: translateY(0);
+}
+
 #loginMessage {
     margin-top: 15px;
-    font-weight: 600;
-    font-size: 0.95em;
+    font-weight: bold;
+}
+
+/* ======================================= */
+/* ANIMASI */
+/* ======================================= */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.content-card {
+    animation: fadeIn 0.5s ease-out;
 }
 
 
@@ -284,6 +306,7 @@ body::before {
 @media (max-width: 600px) {
     body {
         background-attachment: scroll; 
+        padding: 0;
     }
     
     .container {
@@ -293,6 +316,7 @@ body::before {
         border-radius: 0; 
         box-shadow: none; 
         margin: 0;
+        min-height: 100vh;
     }
 
     .login-card {
@@ -303,6 +327,7 @@ body::before {
     
     .header {
         padding: 20px 15px 10px 15px; 
+        border-radius: 0;
     }
 
     .content-card {
@@ -311,45 +336,192 @@ body::before {
         box-shadow: none;
         margin-top: 0; 
     }
-    
-    .table-container {
-        margin-left: -15px; 
-        margin-right: -15px;
-        width: calc(100% + 30px); 
-        box-shadow: none; 
-        border-radius: 0; 
+
+    .footer {
+        flex-direction: column;
+        padding: 10px 15px;
+        text-align: center;
+        border-radius: 0;
     }
     
-    .asset-table th, .asset-table td {
-        padding: 10px 8px; 
-        font-size: 12px;
+    .footer p {
+        margin: 5px 0;
     }
 
+    .user-info-text {
+        order: -1; /* Pindahkan NIP ke atas jika perlu */
+    }
+    
     .flex-menu-container {
-        grid-template-columns: 1fr; 
-        max-width: none; 
-    }
-
-    .back-button {
-        width: 100%;
-        box-sizing: border-box;
+        grid-template-columns: 1fr; /* 1 kolom di HP */
     }
     
-    /* Memperbaiki tata letak tombol download di mobile */
-    .back-button.download-asset-btn {
-        margin-right: 0;
-        margin-top: 10px; 
+    .menu-button {
+        padding: 18px 10px;
+        font-size: 1em;
     }
+    /* ------------------------------------------------ */
+/* 1. Tombol Chat Mengambang (floating-chat-button) */
+/* ------------------------------------------------ */
+#floating-chat-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #90EE90; /* Hijau Muda */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    z-index: 1000;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
-/* --- Keyframes untuk Animasi Fade-In --- */
+#floating-chat-button:hover {
+    background-color: #7CFC00;
+    transform: scale(1.08); /* Efek membesar saat disentuh */
+}
+
+#chat-icon {
+    font-size: 24px;
+    color: #333;
+    line-height: 1;
+}
+
+/* Indikator Online */
+#online-indicator {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 12px;
+    height: 12px;
+    background-color: #3CB371; /* Hijau Online */
+    border-radius: 50%;
+    border: 2px solid white;
+    animation: pulse 1.5s infinite; /* Efek berdenyut */
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(60, 179, 113, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(60, 179, 113, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(60, 179, 113, 0); }
+}
+
+/* ------------------------------------------------ */
+/* 2. Styling Kotak Chat (chat-box) */
+/* ------------------------------------------------ */
+#chat-box {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 320px;
+    max-height: 420px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
+    z-index: 999;
+    display: none; /* Awalnya tersembunyi */
+    flex-direction: column;
+    overflow: hidden;
+    animation: fadeIn 0.3s ease-out;
+}
+
+#chat-box.open {
+    display: flex;
+}
+
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#chat-header {
+    background-color: #90EE90; /* Hijau Muda */
+    color: #333;
+    padding: 12px 15px;
+    font-weight: bold;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+}
+
+#close-chat {
+    font-size: 24px;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.2s;
+}
+
+#close-chat:hover {
+    color: #D32F2F; /* Merah sedikit gelap */
+}
+
+#chat-body {
+    padding: 15px;
+    flex-grow: 1;
+}
+
+#chat-input {
+    width: 100%;
+    height: 150px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    resize: none;
+    box-sizing: border-box;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+#chat-input:focus {
+    border-color: #7CFC00; /* Hijau saat fokus */
+    outline: none;
+}
+
+#chat-footer {
+    padding: 10px 15px;
+    background-color: #f7f7f7;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    text-align: right;
+}
+
+#send-button {
+    background-color: #25D366; /* Hijau WhatsApp */
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 15px;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+#send-button:hover {
+    background-color: #1DA851;
+}
+
+/* Media Query untuk Responsif (Mobile) */
+@media (max-width: 500px) {
+    #chat-box {
+        bottom: 80px;
+        right: 10px;
+        width: 90vw;
+        max-width: 380px;
+        max-height: 75vh;
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    #floating-chat-button {
+        bottom: 10px;
+        right: 10px;
+        width: 55px;
+        height: 55px;
     }
+}
 }
