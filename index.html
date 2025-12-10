@@ -13,15 +13,15 @@
         window.location.replace('login.html'); 
     }
   </script>
-  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
  </head>
  <body>
  
   <div class="container"> 
       
       <header class="header">
-          <h1 class="header-title">Daftar Aset Informasi & Teknologi</h1> 
-          <p class="header-subtitle">Monitoring Aset IT Per Ruangan</p>
+          <h1 class="header-title">Data Aset Informasi & Teknologi</h1> 
+          <p class="header-subtitle">Monitoring Aset IT</p>
       </header>
 
       <div class="main-content">
@@ -37,6 +37,7 @@
       
       <footer class="footer">
         <p id="copyrightText">Copyright © IT Support RSU Karina Medika</p>
+        <p class="user-info-text">NIP: <span id="userNIPDisplay"></span></p> 
         <a href="#" onclick="logout()" class="logout-link">Logout</a>
       </footer>
   </div>
@@ -49,9 +50,297 @@
           sessionStorage.removeItem('isLoggedIn');
           sessionStorage.removeItem('userNIP');
           // Arahkan kembali ke halaman login
-          window.location.replace('login.html');
+          window.location.replace('login.html'); 
       }
+      
+      // LOGIKA BARU: Tampilkan NIP dari sessionStorage
+      document.addEventListener('DOMContentLoaded', function() {
+        const userNIP = sessionStorage.getItem('userNIP');
+        if (userNIP) {
+            document.getElementById('userNIPDisplay').textContent = userNIP;
+        } else {
+            // Sembunyikan jika tidak ada NIP
+            const userInfoElement = document.querySelector('.user-info-text');
+            if (userInfoElement) {
+                userInfoElement.style.display = 'none';
+            }
+        }
+      });
   </script>
+<style>
+/* ------------------------------------------------ */
+/* 1. Styling Tombol Kontak (CSS) */
+/* ------------------------------------------------ */
+#floating-contact-button {
+    position: fixed; /* Dimulai fixed */
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #90EE90; /* Hijau Muda */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    cursor: grab; /* Cursor menunjukkan bisa dipindahkan */
+    z-index: 10000; /* Prioritas Z-Index tertinggi */
+    transition: background-color 0.3s, transform 0.2s;
+}
 
+#floating-contact-button:hover {
+    background-color: #7CFC00;
+}
+
+#floating-contact-button:active {
+    cursor: grabbing;
+}
+
+#cs-icon {
+    font-size: 26px;
+    color: #333;
+    line-height: 1;
+}
+
+#online-indicator {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    width: 14px;
+    height: 14px;
+    background-color: #3CB371;
+    border-radius: 50%;
+    border: 3px solid white;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(60, 179, 113, 0.5); }
+    70% { box-shadow: 0 0 0 10px rgba(60, 179, 113, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(60, 179, 113, 0); }
+}
+
+/* ------------------------------------------------ */
+/* 2. Styling Kotak Chat (CSS) */
+/* ------------------------------------------------ */
+#chat-box {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 320px;
+    max-height: 420px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
+    z-index: 9999;
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    animation: fadeIn 0.3s ease-out;
+}
+
+#chat-box.open {
+    display: flex;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#chat-header {
+    background-color: #90EE90;
+    color: #333;
+    padding: 12px 15px;
+    font-weight: bold;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+}
+
+#close-chat {
+    font-size: 24px;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.2s;
+}
+
+#chat-body { padding: 15px; flex-grow: 1; }
+
+#chat-input {
+    width: 100%;
+    height: 150px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    resize: none;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+#chat-footer {
+    padding: 10px 15px;
+    background-color: #f7f7f7;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    text-align: right;
+}
+
+#send-button {
+    background-color: #25D366;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 15px;
+    transition: background-color 0.3s;
+}
+
+#send-button i { margin-right: 5px; }
+
+/* Media Query untuk Responsif */
+@media (max-width: 500px) {
+    #chat-box {
+        bottom: 80px;
+        right: 10px;
+        width: 90vw;
+    }
+    #floating-contact-button {
+        bottom: 10px;
+        right: 10px;
+    }
+}
+</style>
+
+<div id="floating-contact-button" onclick="toggleChatBox()">
+    <span id="cs-icon"><i class="fas fa-headset"></i></span>
+    <div id="online-indicator"></div>
+</div>
+
+<div id="chat-box">
+    <div id="chat-header">
+        Pusat Kontak Online
+        <span id="close-chat" onclick="toggleChatBox()">&times;</span>
+    </div>
+    <div id="chat-body">
+        <textarea id="chat-input" placeholder="Tuliskan pesan, pertanyaan, atau komentar Anda di sini..."></textarea>
+    </div>
+    <div id="chat-footer">
+        <button id="send-button" onclick="sendMessage()">
+            <i class="fab fa-whatsapp"></i> Kirim via WhatsApp
+        </button>
+    </div>
+</div>
+
+<script>
+    // **********************************************
+    // ** PENTING: GANTI NOMOR WHATSAPP DI BAWAH INI **
+    // **********************************************
+    const whatsappNumber = '6281234567890'; // Ganti dengan nomor WhatsApp Anda
+    const initialMessage = 'Halo Admin, saya ingin menghubungi Anda melalui chat dari website:\n\n'; 
+
+    // Fungsi untuk menampilkan/menyembunyikan kotak chat
+    function toggleChatBox() {
+        const chatBox = document.getElementById('chat-box');
+        chatBox.classList.toggle('open');
+    }
+
+    // Fungsi untuk mengirim pesan ke WhatsApp
+    function sendMessage() {
+        const chatInput = document.getElementById('chat-input');
+        const message = chatInput.value;
+
+        if (message.trim() === "") {
+            alert("Silakan tulis pesan Anda terlebih dahulu.");
+            return;
+        }
+
+        const fullMessage = encodeURIComponent(initialMessage + message);
+        const whatsappLink = `https://wa.me/${whatsappNumber}?text=${fullMessage}`;
+
+        window.open(whatsappLink, '_blank');
+
+        chatInput.value = '';
+        toggleChatBox();
+    }
+
+    // Fungsionalitas DRAGGABLE (Memindahkan Tombol)
+    function makeDraggable(element) {
+        let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+        let isClicked = false;
+
+        element.onmousedown = dragMouseDown;
+
+        function dragMouseDown(e) {
+            if (document.getElementById('chat-box').classList.contains('open')) {
+                // Jangan pindahkan tombol jika kotak chat sedang terbuka
+                return;
+            }
+            e = e || window.event;
+            e.preventDefault();
+            
+            // Dapatkan posisi kursor saat mouse ditekan:
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            document.onmouseup = closeDragElement;
+            
+            // Panggil fungsi setiap kursor bergerak:
+            document.onmousemove = elementDrag;
+            
+            isClicked = true;
+            // Ini mencegah tombol langsung membuka kotak chat saat user mencoba drag
+            setTimeout(() => {
+                isClicked = false;
+            }, 200);
+        }
+
+        function elementDrag(e) {
+            e = e || window.event;
+            e.preventDefault();
+            
+            // Hitung posisi kursor yang baru:
+            pos1 = pos3 - e.clientX;
+            pos2 = pos4 - e.clientY;
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+
+            // Atur posisi baru elemen:
+            let newTop = (element.offsetTop - pos2);
+            let newLeft = (element.offsetLeft - pos1);
+
+            // Batasi elemen agar tidak keluar dari viewport
+            newTop = Math.min(Math.max(newTop, 0), window.innerHeight - element.offsetHeight);
+            newLeft = Math.min(Math.max(newLeft, 0), window.innerWidth - element.offsetWidth);
+            
+            element.style.top = newTop + "px";
+            element.style.left = newLeft + "px";
+            element.style.right = 'auto'; // Hapus properti right
+            element.style.bottom = 'auto'; // Hapus properti bottom
+        }
+
+        function closeDragElement() {
+            // Berhenti memindahkan saat tombol mouse dilepas:
+            document.onmouseup = null;
+            document.onmousemove = null;
+        }
+        
+        // Modifikasi onClick untuk mencegah toggle saat sedang dragging
+        const originalOnClick = element.onclick;
+        element.onclick = function() {
+            if (!isClicked) {
+                originalOnClick();
+            }
+        };
+    }
+
+    // Terapkan fungsi draggable ke tombol
+    makeDraggable(document.getElementById("floating-contact-button"));
+
+</script>
  </body>
-</html> 
+</html>
