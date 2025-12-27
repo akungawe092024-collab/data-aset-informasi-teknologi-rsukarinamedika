@@ -30,22 +30,22 @@ document.addEventListener('DOMContentLoaded', () => {
         "Lantai 1 (R/S)": {
             title: "Aset Router/Switch Lantai 1",
             type: "asset",
-            downloadUrl: "MASUKKAN_LINK_GOOGLE_SHEET_ANDA_UNTUK_LANTAI_1_DISINI" 
+            downloadUrl: "https://docs.google.com/spreadsheets/d/11jZONC6FNlBgoKoR66sNg2whQbbx_-a6/edit?usp=sharing&ouid=107932485542159021273" 
         },
         "Lantai 2 (R/S)": {
             title: "Aset Router/Switch Lantai 2",
             type: "asset",
-            downloadUrl: "MASUKKAN_LINK_GOOGLE_SHEET_ANDA_UNTUK_LANTAI_2_DISINI"
+            downloadUrl: "https://docs.google.com/spreadsheets/d/11jZONC6FNlBgoKoR66sNg2whQbbx_-a6/edit?usp=sharing&ouid=107932485542159021273"
         },
         "Lantai 3 (R/S)": {
             title: "Aset Router/Switch Lantai 3",
             type: "asset",
-            downloadUrl: "MASUKKAN_LINK_GOOGLE_SHEET_ANDA_UNTUK_LANTAI_3_DISINI"
+            downloadUrl: "https://docs.google.com/spreadsheets/d/11jZONC6FNlBgoKoR66sNg2whQbbx_-a6/edit?usp=sharing&ouid=107932485542159021273"
         },
         "Ruang CCTV": {
             title: "Aset Router/Switch Ruang CCTV",
             type: "asset",
-            downloadUrl: "MASUKKAN_LINK_GOOGLE_SHEET_ANDA_UNTUK_RUANG_CCTV_DISINI" 
+            downloadUrl: "https://docs.google.com/spreadsheets/d/11jZONC6FNlBgoKoR66sNg2whQbbx_-a6/edit?usp=sharing&ouid=107932485542159021273" 
         },
         
         // --- DATA PRINTER DAN UPS (TIDAK BERUBAH) ---
